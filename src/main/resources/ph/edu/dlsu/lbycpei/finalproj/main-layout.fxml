@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ph.edu.dlsu.lbycpei.finalproj.controller.MainLayoutController">
+
+    <!-- HEADER -->
+    <top>
+        <HBox style="-fx-background-color: #34495E; -fx-padding: 10; -fx-alignment: center-right;">
+            <Label fx:id="userLabel" text="Welcome, User!" style="-fx-text-fill: white; -fx-font-size: 16;" />
+            <Button text="Logout" style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-margin-left: 10;"
+                    onAction="#handleLogout"/>
+        </HBox>
+    </top>
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox style="-fx-background-color: #2C3E50; -fx-padding: 10; -fx-spacing: 10;">
+            <Label text="Menu" styleClass="menu-name"/>
+            <Button text="Calendar" style="-fx-pref-width: 150;" onAction="#showCalendar"/>
+            <Button text="Tasks" style="-fx-pref-width: 150;" onAction="#showTasks"/>
+            <Button text="Pomodoro Timer" style="-fx-pref-width: 150;" onAction="#showPomodoro"/>
+        </VBox>
+    </left>
+
+    <!-- MAIN CONTENT AREA -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #ECF0F1;" />
+    </center>
+
+</BorderPane>
