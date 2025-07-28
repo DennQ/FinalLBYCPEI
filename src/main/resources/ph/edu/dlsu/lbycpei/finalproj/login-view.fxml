@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="393.0" prefWidth="480.0" spacing="20.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.project.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Text fill="#ffc0cbfa" strokeType="OUTSIDE" strokeWidth="0.0" text="StudyMate">
+      <font>
+         <Font name="Arial Bold" size="30.0" />
+      </font>
+   </Text>
+   <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <top>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="            Welcome Back!" wrappingWidth="338.13680267333984" BorderPane.alignment="CENTER">
+            <font>
+               <Font name="System Bold" size="25.0" />
+            </font>
+         </Text>
+      </top>
+      <left>
+         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+               <Text layoutX="36.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in">
+                  <font>
+                     <Font name="Arial Bold" size="20.0" />
+                  </font>
+               </Text>
+               <Text layoutX="36.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in to your account">
+                  <font>
+                     <Font name="Arial" size="15.0" />
+                  </font>
+               </Text>
+               <TextField layoutX="35.0" layoutY="70.0" prefHeight="26.0" prefWidth="369.0" text="username" />
+               <TextField layoutX="35.0" layoutY="108.0" prefHeight="26.0" prefWidth="369.0" text="password" />
+               <Button layoutX="39.0" layoutY="154.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="362.0" style="-fx-background-color: BLACK;" text="Continue" textFill="WHITE">
+                  <font>
+                     <Font name="Arial" size="12.0" />
+                  </font>
+               </Button>
+            </children>
+         </AnchorPane>
+      </left>
+   </BorderPane>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By clicking continue, you agree to our Terms of Service and Privacy Policy" wrappingWidth="171.1497344970703">
+      <font>
+         <Font name="Arial" size="10.0" />
+      </font>
+   </Text>
+</VBox>
