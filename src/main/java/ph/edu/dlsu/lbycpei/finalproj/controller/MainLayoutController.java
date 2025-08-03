@@ -26,19 +26,20 @@ public class MainLayoutController {
     // Load Calendar view by default or when clicked
     @FXML
     private void showCalendar() throws IOException {
-        loadView("/ph/edu/dlsu/lbycpei/finalproj/view/Calendar.fxml");
+        System.out.println("Calendar button clicked!");
+        loadView("/ph/edu/dlsu/lbycpei/finalproj/calendar.fxml");
     }
 
     // Load Tasks view
     @FXML
     private void showTasks() throws IOException {
-        loadView("/ph/edu/dlsu/lbycpei/finalproj/view/Tasks.fxml");
+        loadView("/ph/edu/dlsu/lbycpei/finalproj/tasks.fxml");
     }
 
     // Load Settings view
     @FXML
     private void showPomodoro() throws IOException {
-        loadView("/ph/edu/dlsu/lbycpei/finalproj/view/Pomodoro.fxml");
+        loadView("/ph/edu/dlsu/lbycpei/finalproj/pomodoro.fxml");
     }
 
     // Reusable method to load FXML into contentArea
@@ -47,12 +48,12 @@ public class MainLayoutController {
         contentArea.getChildren().setAll(view);
     }
 
-    // Logout → back to Login screen
+    //
     @FXML
     private void handleLogout() throws IOException {
         Stage stage = (Stage) contentArea.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/view/Login.fxml"));
-        stage.setScene(new Scene(loader.load()));
+        stage.setScene(new Scene(loader.load(), 1440, 960));
         stage.show();
     }
 }

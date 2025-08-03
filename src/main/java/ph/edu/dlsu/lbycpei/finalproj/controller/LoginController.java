@@ -26,12 +26,15 @@ public class LoginController {
         String password = passwordField.getText();
 
         // TEMPORARY: Hardcoded credentials
-        if ("student".equals(username) && "1234".equals(password)) {
+        if ("s".equals(username) && "1".equals(password)) {
             try {
                 // Load the MainLayout
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
                 System.out.println("FXML URL: " + getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
                 Parent root = loader.load();
+//                Scene scene = new Scene(root, 1440, 960);   //
+//                stage.setScene(scene);
+//                stage.show();
 
                 // Pass username to MainController
                 MainLayoutController mainController = loader.getController();
