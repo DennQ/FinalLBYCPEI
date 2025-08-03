@@ -33,26 +33,26 @@
            fx:controller="ph.edu.dlsu.lbycpei.finalproj.controller.LoginController"
            styleClass="root-background">
 
-<!--    <VBox styleClass="login-card" spacing="20" alignment="CENTER">-->
-    <VBox fx:id="loginCard" alignment="CENTER" layoutX="432" layoutY="172" spacing="5.0" styleClass="login-card">
+   <!--    <VBox styleClass="login-card" spacing="20" alignment="CENTER">-->
+   <VBox fx:id="loginCard" alignment="CENTER" layoutX="432" layoutY="172" spacing="5.0" styleClass="login-card">
 
-        <Label text="StudyMate" styleClass="brand"/>
-        <Label text="Welcome back!" styleClass="welcome"/>
+      <Label text="StudyMate" styleClass="brand"/>
+      <Label text="Welcome back!" styleClass="welcome"/>
 
-        <HBox alignment="CENTER_LEFT" spacing="100" styleClass="login-header">
-            <Label text="Log in" styleClass="section-title"/>
-            <Hyperlink text="I don’t have an account" styleClass="alt-option"/>
-        </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="100" styleClass="login-header">
+         <Label text="Log in" styleClass="section-title"/>
+         <Hyperlink fx:id="signupLink" text="I don’t have an account" styleClass="alt-option" onAction="#handleSignupLink"/>
+      </HBox>
 
-        <Label text="Log in to your account" styleClass="subtext"/>
-        <TextField fx:id="usernameField" promptText="username" styleClass="input-field"/>
-        <PasswordField fx:id="passwordField" promptText="password" styleClass="input-field"/>
+      <Label text="Log in to your account" styleClass="subtext"/>
+      <TextField fx:id="usernameField" promptText="username" styleClass="input-field"/>
+      <PasswordField fx:id="passwordField" promptText="password" styleClass="input-field"/>
 
-        <Button text="Continue" onAction="#handleLogin" styleClass="primary-button"/>
-        <Label fx:id="statusLabel" layoutX="100" layoutY="200" text="" />
+      <Button text="Continue" onAction="#handleLogin" styleClass="primary-button"/>
+      <Label fx:id="statusLabel" layoutX="100" layoutY="200" text="" />
 
-        <Label text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
-               wrapText="true"
-               styleClass="terms"/>
-    </VBox>
+      <Label text="By clicking continue, you agree to our Terms of Service and Privacy Policy"
+             wrapText="true"
+             styleClass="terms"/>
+   </VBox>
 </StackPane>

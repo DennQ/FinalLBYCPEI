@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="486.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.project.SignUp">
+<AnchorPane prefHeight="486.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.edu.dlsu.lbycpei.finalproj.controller.SignUpController">
    <children>
       <Text fill="#ffc0cbfa" layoutX="224.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="StudyMate">
          <font>
@@ -33,7 +33,7 @@
       <TextField layoutX="74.0" layoutY="255.0" prefHeight="26.0" prefWidth="369.0" text="username" />
       <TextField layoutX="74.0" layoutY="291.0" prefHeight="26.0" prefWidth="369.0" text="password" />
       <TextField layoutX="74.0" layoutY="329.0" prefHeight="26.0" prefWidth="369.0" text="confirm password" />
-      <Button layoutX="77.0" layoutY="366.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="362.0" style="-fx-background-color: BLACK;" text="Sign Up" textFill="WHITE">
+      <Button layoutX="77.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleSignUp" prefHeight="23.0" prefWidth="362.0" style="-fx-background-color: BLACK;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -43,10 +43,10 @@
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
-      <Text layoutX="280.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-underline: black;" text="Log in here." underline="true" wrappingWidth="171.1497344970703">
+      <Hyperlink layoutX="275.0" layoutY="400.0" onAction="#handleBackToLogin" prefHeight="23.0" prefWidth="95.0" style="-fx-underline: black;" text="Log in here.">
          <font>
-            <Font name="Arial" size="10.0" />
+            <Font size="11.0" />
          </font>
-      </Text>
+      </Hyperlink>
    </children>
 </AnchorPane>

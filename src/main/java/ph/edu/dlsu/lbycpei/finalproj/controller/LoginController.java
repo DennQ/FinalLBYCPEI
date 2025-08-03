@@ -1,7 +1,9 @@
 package ph.edu.dlsu.lbycpei.finalproj.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -21,16 +23,36 @@ public class LoginController {
     private Label statusLabel;
 
     @FXML
+    private void handleSignupLink(ActionEvent event) {
+        try {
+            Parent signupRoot = FXMLLoader.load(getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/sign-up.fxml"));
+
+            //
+            Scene scene = new Scene(signupRoot);
+            scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
     private void handleLogin() {
         String username = usernameField.getText();
         String password = passwordField.getText();
+
 
         // TEMPORARY: Hardcoded credentials
         if ("s".equals(username) && "1".equals(password)) {
             try {
                 // Load the MainLayout
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
-                System.out.println("FXML URL: " + getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
+            //    System.out.println("FXML URL: " + getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
                 Parent root = loader.load();
 //                Scene scene = new Scene(root, 1440, 960);   //
 //                stage.setScene(scene);

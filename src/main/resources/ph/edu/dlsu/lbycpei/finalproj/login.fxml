@@ -41,7 +41,7 @@
 
       <HBox alignment="CENTER_LEFT" spacing="100" styleClass="login-header">
          <Label text="Log in" styleClass="section-title"/>
-         <Hyperlink text="I don’t have an account" styleClass="alt-option"/>
+         <Hyperlink fx:id="signupLink" text="I don’t have an account" styleClass="alt-option" onAction="#handleSignupLink"/>
       </HBox>
 
       <Label text="Log in to your account" styleClass="subtext"/>
