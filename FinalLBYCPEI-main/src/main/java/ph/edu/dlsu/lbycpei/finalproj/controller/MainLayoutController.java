@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainLayoutController {
 
@@ -16,6 +18,9 @@ public class MainLayoutController {
     @FXML private Label userLabel;
 
     private String currentUser;
+
+    private Map<String, Parent> loadedViews = new HashMap<>();
+    private Map<String, Object> loadedControllers = new HashMap<>();
 
     // Called by LoginController after successful login
     public void setUser(String username) {
@@ -27,33 +32,54 @@ public class MainLayoutController {
     @FXML
     private void showCalendar() throws IOException {
         System.out.println("Calendar button clicked!");
-        loadView("/ph/edu/dlsu/lbycpei/finalproj/calendar.fxml");
+        loadViewWithCache("/ph/edu/dlsu/lbycpei/finalproj/calendar.fxml", "calendar");
     }
 
     // Load Tasks view
     @FXML
     private void showTasks() throws IOException {
-        loadView("/ph/edu/dlsu/lbycpei/finalproj/tasks.fxml");
+        loadViewWithCache("/ph/edu/dlsu/lbycpei/finalproj/tasks.fxml", "tasks");
     }
 
-    // Load Settings view
+    // Load Pomodoro view
     @FXML
     private void showPomodoro() throws IOException {
-        loadView("/ph/edu/dlsu/lbycpei/finalproj/pomodoro.fxml");
+        loadViewWithCache("/ph/edu/dlsu/lbycpei/finalproj/pomodoro.fxml", "pomodoro");
     }
 
-    // Reusable method to load FXML into contentArea
-    private void loadView(String fxmlPath) throws IOException {
-        Parent view = FXMLLoader.load(getClass().getResource(fxmlPath));
+    private void loadViewWithCache(String fxmlPath, String viewKey) throws IOException {
+        Parent view;
+
+        if (loadedViews.containsKey(viewKey)) {
+            view = loadedViews.get(viewKey);
+        } else {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            view = loader.load();
+
+            loadedViews.put(viewKey, view);
+            loadedControllers.put(viewKey, loader.getController());
+        }
+
         contentArea.getChildren().setAll(view);
     }
 
-    //
+    public Object getController(String viewKey) {
+        return loadedControllers.get(viewKey);
+    }
+
     @FXML
     private void handleLogout() throws IOException {
+        loadedViews.clear();
+        loadedControllers.clear();
+
         Stage stage = (Stage) contentArea.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/view/Login.fxml"));
-        stage.setScene(new Scene(loader.load(), 1440, 960));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/login.fxml"));
+        Parent loginRoot = loader.load();
+
+        Scene scene = new Scene(loginRoot, 1440, 960);
+        scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
+
+        stage.setScene(scene);
         stage.show();
     }
 }
