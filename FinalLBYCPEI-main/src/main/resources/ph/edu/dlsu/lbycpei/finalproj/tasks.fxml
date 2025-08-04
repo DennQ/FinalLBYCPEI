@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" spacing="10" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.edu.dlsu.lbycpei.finalproj.controller.TasksController">
+
+   <children>
+      <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="My Tasks" />
+      <Label text="To-do list" />
+
+      <HBox spacing="10">
+         <children>
+            <TextField fx:id="taskNameField" promptText="Enter task name" />
+            <DatePicker fx:id="dueDatePicker" promptText="Enter due date" />
+            <ComboBox fx:id="priorityBox" prefWidth="120" promptText="Priority" />
+            <Button onAction="#addTask" text="Add Task" />
+         </children>
+      </HBox>
+
+      <TableView fx:id="tasksTable" prefHeight="300.0">
+         <columns>
+            <TableColumn fx:id="doneColumn" prefWidth="60.0" text="Done" />
+            <TableColumn fx:id="nameColumn" prefWidth="200.0" text="Task" />
+            <TableColumn fx:id="dueColumn" prefWidth="150.0" text="Due Date" />
+            <TableColumn fx:id="priorityColumn" prefWidth="120.0" text="Priority" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>

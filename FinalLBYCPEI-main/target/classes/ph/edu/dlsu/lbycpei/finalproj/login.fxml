@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<?import javafx.scene.control.*?>-->
+<!--<?import javafx.scene.layout.*?>-->
+<!--<?import javafx.geometry.Insets?>-->
+<!--<VBox fx:id="loginCard" styleClass="container" spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"-->
+<!--      xmlns:fx="http://javafx.com/fxml"-->
+<!--      fx:controller="ph.edu.dlsu.lbycpei.finalproj.controller.LoginController">-->
+<!--    <padding>-->
+<!--        <Insets top="50" bottom="50" left="50" right="50"/>-->
+<!--    </padding>-->
+<!--    <Label text="Login" style="-fx-font-size: 24px;"/>-->
+<!--    <TextField fx:id="usernameField" promptText="Username"/>-->
+<!--    <PasswordField fx:id="passwordField" promptText="Password"/>-->
+<!--    <Button text="Login" onAction="#handleLogin"/>-->
+<!--    <Label fx:id="statusLabel" textFill="red"/>-->
+<!--</VBox>-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="884.0" prefWidth="1421.0" style="-fx-background-color: #fff;" stylesheets="@../../../../../style.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ph.edu.dlsu.lbycpei.finalproj.controller.LoginController">
+   <children>
+      <VBox fx:id="loginCard" alignment="CENTER" maxHeight="660.0" maxWidth="576.0" minHeight="660.0" minWidth="576.0" prefHeight="660.0" prefWidth="576.0" spacing="5.0" styleClass="login-card" stylesheets="@../../../../../style.css">
+         <children>
+            <Label style="-fx-font-weight: 900;" styleClass="brand" text="StudyMate" />
+            <Label style="-fx-font-weight: 800;" styleClass="welcome" text="Welcome back!">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <AnchorPane prefHeight="43.0" prefWidth="374.0">
+               <children>
+                  <Label styleClass="section-title" text="Log in" />
+                  <Hyperlink fx:id="signupLink" layoutX="341.0" layoutY="2.0" onAction="#handleSignupLink" styleClass="alt-option" text="I don’t have an account" underline="true" />
+                  <Label layoutY="31.0" styleClass="subtext" text="Log in to your account" />
+               </children>
+            </AnchorPane>
+            <TextField fx:id="usernameField" prefHeight="39.0" prefWidth="708.0" promptText="username" styleClass="input-field" />
+            <PasswordField fx:id="passwordField" promptText="password" styleClass="input-field" />
+            <Button onAction="#handleLogin" styleClass="primary-button" text="Continue" />
+            <Label fx:id="statusLabel" layoutX="100" layoutY="200" text="" />
+            <Label styleClass="terms" text="By clicking continue, you agree to our Terms of Service and Privacy Policy" wrapText="true" />
+         </children>
+      </VBox>
+   </children>
+</StackPane>
