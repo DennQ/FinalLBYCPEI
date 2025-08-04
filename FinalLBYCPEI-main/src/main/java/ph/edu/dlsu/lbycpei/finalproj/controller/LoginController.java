@@ -52,7 +52,7 @@ public class LoginController {
             try {
                 // Load the MainLayout
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
-            //    System.out.println("FXML URL: " + getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
+                //    System.out.println("FXML URL: " + getClass().getResource("/ph/edu/dlsu/lbycpei/finalproj/main-layout.fxml"));
                 Parent root = loader.load();
 //                Scene scene = new Scene(root, 1440, 960);   //
 //                stage.setScene(scene);
